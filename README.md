@@ -12,4 +12,6 @@ These algorithms are mainly from my time at Coding Dojo, Codewars.com, or somewh
  <li>Algo instructions may look different based on where they came from.</li>
  <li>If there is a "_" in the file name it has two algorithms in it</li>
  <li>These algorithms are from the beginning to right now of my coding experience so difficulty may vary and mayhaps lack pseudo code (╯°□°）╯︵ ┻━┻</li>
+ <li>The practice.js file is a list of algorithms I do to keep fresh, uncomment the test case if you would like to run any code.</li>
+ <li>Some code in the practice file may still being worked on!</li>
 </ul>
