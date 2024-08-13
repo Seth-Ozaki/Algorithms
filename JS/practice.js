@@ -7,7 +7,7 @@ const isSquare = (n) => {
     return Math.floor(Math.sqrt(n)) * Math.floor(Math.sqrt(n)) === n ? true : false;
 };
 
-// let testIsSquare = isSquare(4);
+// const testIsSquare = isSquare(4);
 // console.log(testIsSquare);
 
 // ------------------------------------------------------------
@@ -28,7 +28,7 @@ const order = (words) => {
     return output.join(" ");
 };
 
-// let testOrder = order("A1lice 8Bob I5gor 6Heidi Jam4ila G2reg 3Ernst Fio7na");
+// const testOrder = order("A1lice 8Bob I5gor 6Heidi Jam4ila G2reg 3Ernst Fio7na");
 // console.log(testOrder);
 
 // ------------------------------------------------------------
@@ -48,7 +48,7 @@ const diagonal = (arr) => {
     return Math.abs(left - right);
 };
 
-// let testDiagonal = diagonal([[1, 2, 3], [4, 5, 6], [9, 8, 9]]);
+// const testDiagonal = diagonal([[1, 2, 3], [4, 5, 6], [9, 8, 9]]);
 // console.log(testDiagonal);
 
 // ------------------------------------------------------------
@@ -79,7 +79,7 @@ const plusMinus = (arr) => {
     return `${Math.abs(obj.pos / arr.length).toFixed(6)}\n${Math.abs(obj.neg / arr.length).toFixed(6)}\n${Math.abs(obj.zero / arr.length).toFixed(6)}`;
 };
 
-// let testPlusMinus = plusMinus([1, 1, 0, -1, -1]);
+// const testPlusMinus = plusMinus([1, 1, 0, -1, -1]);
 // console.log(testPlusMinus);
 
 // ------------------------------------------------------------
@@ -97,7 +97,7 @@ const staircase = (n) => {
     }
 };
 
-// let testStaircase = staircase(4);
+// const testStaircase = staircase(4);
 
 // ------------------------------------------------------------
 // Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
@@ -119,4 +119,4 @@ const minMaxSum = (arr) => {
     console.log(`${min} ${max}`);
 };
 
-let testMinMaxSum = minMaxSum([2, 3, 1, 4, 7]);
+// const testMinMaxSum = minMaxSum([2, 3, 1, 4, 7]);
