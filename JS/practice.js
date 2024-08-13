@@ -92,4 +92,31 @@ const plusMinus = (arr) => {
 // Write a program that prints a staircase of size n that is also right aligned.
 
 const staircase = (n) => {
+    for (let i = 1; i <= n; i++) {
+        console.log(' '.repeat(n - i) + '#'.repeat(i));
+    }
 };
+
+// let testStaircase = staircase(4);
+
+// ------------------------------------------------------------
+// Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
+//  Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+const minMaxSum = (arr) => {
+    arr.sort();
+    let min = 0;
+    let max = 0;
+    let i = 0;
+    let j = arr.length - 1;
+
+    while (i < arr.length - 1) {
+        min += arr[i];
+        max += arr[j];
+        i++;
+        j--;
+    }
+    console.log(`${min} ${max}`);
+};
+
+let testMinMaxSum = minMaxSum([2, 3, 1, 4, 7]);
