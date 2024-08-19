@@ -130,3 +130,65 @@ const likes = (names: string[]): any => {
 // console.log(testLikes4);
 
 // ------------------------------------------------------------
+// Sam's house has an apple tree and an orange tree that yield an abundance of fruit.
+// Using the information given below, determine the number of apples and oranges that land on Sam's house.
+
+
+// Where s is the start point, and t is the endpoint. The apple tree is to the left of the house, and the orange tree is to its right.
+// Assume the trees are located on a single point, where the apple tree is at point a, and the orange tree is at point b.
+// When a fruit falls from its tree, it lands d units of distance from its tree of origin along the x-axis.
+// *A negative value of d means the fruit fell d units to the tree's left, and a positive value of d means it falls d units to the tree's right. *
+
+// Given the value of d for apples and oranges, determine how many apples and oranges will fall on Sam's house (i.e., in the inclusive range [s,t])?
+
+// For example, Sam's house is between 7 and 10. The apple tree is located at 4 and the orange at 12. There are 3 apples and 3 oranges.
+// Apples are thrown [2,3,-4] units distance from a, and oranges are thrown [3,-2,-4] units distance.
+// Adding each apple distance to the position of the tree, they land at [4 + 2, 4 + 3, 4 + -4] = [6,7,0].
+// Oranges land at [12 + 3, 12 + -2, 12 + -4] = [15,10,8]. One apple and two oranges land in the inclusive range 7-10 so we print 1,2
+
+const fallingFruit = (s: number, t: number, a: number, b: number, apples: number[], oranges: number[]): any => {
+    let appleCount = 0;
+    let orangeCount = 0;
+    let mostDropped = apples.length >= oranges.length ? apples.length : oranges.length; // to make sure we loop over every array element in the case of different array sizes
+    for (let i = 0; i < mostDropped; i++) {
+        if ((a + apples[i]) >= s && (a + apples[i]) <= t) {
+            appleCount++;
+        }
+        if ((b + oranges[i]) >= s && (b + oranges[i]) <= t) {
+            orangeCount++;
+        }
+    }
+    return (appleCount + "\n" + orangeCount);
+
+};
+
+// const testFallingFruit = fallingFruit(5, 10, 1, 12, [3, 5, 4, -2], [-2, -5, 4, 6, -3]);
+// console.log(testFallingFruit);
+
+// ------------------------------------------------------------
+// You are choreographing a circus show with various animals.
+// For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).
+
+// The first kangaroo starts at location x1 and moves at a rate of v1 meters per jump.
+// The second kangaroo starts at location x2 and moves at a rate of v2 meters per jump.
+// You have to figure out a way to get both kangaroos at the same location at the same time as part of the show. If it is possible, return YES, otherwise return NO.
+
+const kangaroos = (x1: number, v1: number, x2: number, v2: number): any => {
+    // Checks for different kangaroo velocity
+    if (v1 !== v2) {
+        const n = (x2 - x1) / (v1 - v2); // Equation to determine how many jumps it would take to land at same point
+        return (Number.isInteger(n) && n >= 0) ? "YES" : "NO"; // to determine if the meeting point is positive (in the future), negative numbers assumed to be past meetings.
+    } else {
+        return x1 === x2 ? "YES" : "NO"; // If velocities are the same they must start at the same point to meet
+    }
+};
+
+// const testKangaroos = kangaroos(0, 3, 4, 2); // Expected : YES
+// console.log(testKangaroos);
+
+// const testKangaroos1 = kangaroos(0, 2, 5, 3); // Expected : NO
+// console.log(testKangaroos1);
+
+// ------------------------------------------------------------
+
+
